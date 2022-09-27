@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+/* common */
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #333;
+  font-size: 0.875rem;
+  min-height: 100vh;  /* デバイス幅がサイトの高さになる */
+  position: relative;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+a:hover {
+  opacity: .7;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;  /* ブラウザをmax-width以上にしたとき、中央揃えにする */
+  padding: 0 40px;
+}
+
+.content {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+
+.site-title {
+  width: 180px;
+  line-height: 1px;
+  display: block;
+}
+
+.page-title {
+  font-size: 0.875rem;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+/* header */
+#header {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+    /* CLOSEのハンバーガーメニューのナビ設定 */
+    /* 透明で左画面端に隠しておく */
+    #navi {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      color: #fff;
+      padding: 36px 50px;
+      transition: all .5s;
+      z-index: 20;
+      opacity: 0;
+    }
+
+    #navi a {
+      color: #fff;
+    }
+
+    #navi li {
+      padding-bottom: 14px;
+    }
+
+    /* OPENのハンバーガーメニューのナビ設定 */
+    .open #navi {
+      left: 0;
+      opacity: 1;
+    }
+
+    /* closeハンバーガーメニューのボタン設定 */
+    .toggle-btn {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      transition: all .5s;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .toggle-btn span {
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: #333;
+      border-radius: 4px;
+      transition: all .5s;
+    }
+
+    .toggle-btn span:nth-child(1) {
+      top: 10px;
+    }
+
+    .toggle-btn span:nth-child(2) {
+      bottom: 10px;
+    }
+
+    /* openハンバーガーメニューのボタン設定 */
+    .open .toggle-btn span {
+      background: #fff;
+    }
+
+    .open .toggle-btn span:nth-child(1) {
+      transform: translateY(4px) rotate(45deg);
+    }
+
+    .open .toggle-btn span:nth-child(2) {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+
+    /* CLOSEマスク設定 */
+    /* 透明配置しておく */
+    #mask {
+      display: none;
+      transition: all .5s;
+    }
+
+    /* OPENマスク設定 */
+    .open #mask {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: .8;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+/* top produnct main */
+#top {
+  padding-top: 80px;
+  padding-bottom: 160px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-list li {
+  width: 23%;
+  margin-bottom: 40px;
+}
+
+.product-list img {
+  margin-bottom: 10px;
+  vertical-align: top;
+}
+
+.product-list p {
+  font-size: 0.75rem;
+}
+
+.link-text {
+  display: block;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.pagination  .now {
+  font-weight: bold;
+}
+
+/* item */
+#item {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.item-text {
+  width: 43%;
+}
+
+
+.item-text p {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.item-text dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-text dt {
+  width: 30%;
+}
+
+.item-text dd {
+  width: 70%;
+}
+
+
+#item img {
+  width: 50%;
+  vertical-align: top;
+}
+
+/* about */
+#about {
+  max-width: 600px;
+}
+
+#about p {
+  margin-bottom: 30px;
+  line-height: 1.9;
+}
+
+/* company */
+#company {
+  max-width: 600px;
+}
+
+#company dl {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+#company dt {
+  width: 30%;
+  border-bottom: solid 1px #dcdbdb; 
+  padding: 20px 10px ;
+}
+
+#company dd {
+  width: 70%;
+  border-bottom: solid 1px #dcdbdb; 
+  padding: 20px 10px;
+}
+
+#company dt:last-of-type, 
+#company dd:last-of-type {
+  border-bottom: none;
+}
+
+#company .map {
+  filter: grayscale(100%);
+}
+
+#company .map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+/* footer */
+#footer  {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+.footer-menu {
+  display: flex;
+}
+
+.footer-menu li { 
+  font-size: 0.75rem;
+  margin-right: 30px;
+}
+
+.copyright {
+  font-size: 0.625rem;
+}
+
+
+/* sp */
+
+@media (max-width:900px) {
+
+  /*  main */
+
+  .product-list li {
+    width: 47%;
+}
+
+  /* item */
+  #item {
+    flex-direction: column;
+  }
+  
+  #item img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .item-text {
+    width: 100%;
+  }
+  
+  /* company  */
+  #company dl {
+    flex-direction: column;
+  }
+  
+  #company dt {
+    width: 100%;
+    border-bottom: none;
+    padding-bottom: 5px;
+  }
+  
+  #company dd {
+    width: 100%;
+    padding-top: 5px;
+  }
+
+  /* footer */
+  #footer  {
+    flex-direction: column;
+  }
+
+  .footer-menu {
+    margin-bottom: 5px;
+  }
+
+}
